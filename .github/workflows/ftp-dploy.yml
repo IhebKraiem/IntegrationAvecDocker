@@ -14,8 +14,10 @@ jobs:
     - name: 📂 Sync files
       uses: IhebKraiem/IntegrationAvecDocker@v1.1
       with:
-        server: ftp.cluster026.hosting.ovh.net
-        username: ${{ secrets.ftp_username }}
-        password: ${{ secrets.ftp_password }}
-        server-dir: /www/test/
+        entryPoint: deploy
+        args: |
+          --server ftp.cluster026.hosting.ovh.net
+          --username ${{ secrets.ftp_username }}
+          --password ${{ secrets.ftp_password }}
+          --server-dir /www/test/
         
